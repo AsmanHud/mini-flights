@@ -1,6 +1,6 @@
 import { Box, Paper, Typography } from "@mui/material";
-import homeBanner from "../assets/undraw_luggage_k1gn.svg";
 import SearchBox from "../components/SearchBox";
+import HomePageBanner from "../components/HomePageBanner";
 
 export default function Home() {
   return (
@@ -16,10 +16,10 @@ export default function Home() {
         gap: 4,
       }}
     >
-      <Box component="img" src={homeBanner} sx={{ maxWidth: 300 }} />
+      <HomePageBanner />
 
-      <Typography variant="h2" component="h1">
-        Mini Flights
+      <Typography variant="h2" component="h1" fontSize="53px">
+        (Mini) Flights
       </Typography>
 
       <Paper
