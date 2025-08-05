@@ -16,8 +16,20 @@ export default function InputFields() {
   };
 
   return (
-    <Box sx={{ display: "flex", gap: 2, alignItems: "flex-start", flexWrap: "wrap" }}>
-      <Box sx={{ flex: 1, minWidth: "200px" }}>
+    <Box
+      sx={{
+        display: "flex",
+        gap: { xs: 1, sm: 2 },
+        alignItems: "flex-start",
+        flexWrap: "wrap",
+      }}
+    >
+      <Box
+        sx={{
+          flex: 1,
+          minWidth: "200px",
+        }}
+      >
         <AirportAutocomplete
           label="From"
           value={formData.origin}
@@ -39,7 +51,12 @@ export default function InputFields() {
         <SwapHoriz />
       </IconButton>
 
-      <Box sx={{ flex: 1, minWidth: "200px" }}>
+      <Box
+        sx={{
+          flex: 1,
+          minWidth: "200px",
+        }}
+      >
         <AirportAutocomplete
           label="To"
           value={formData.destination}
@@ -48,7 +65,12 @@ export default function InputFields() {
         />
       </Box>
 
-      <Box sx={{ flex: 1, minWidth: "200px" }}>
+      <Box
+        sx={{
+          flex: 1,
+          minWidth: "200px",
+        }}
+      >
         <DatePicker
           label="Departure"
           value={formData.departureDate}
@@ -63,7 +85,12 @@ export default function InputFields() {
       </Box>
 
       {formData.tripType === "round-trip" && (
-        <Box sx={{ flex: 1, minWidth: "200px" }}>
+        <Box
+          sx={{
+            flex: 1,
+            minWidth: "200px",
+          }}
+        >
           <DatePicker
             label="Return"
             value={formData.returnDate}

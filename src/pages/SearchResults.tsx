@@ -17,31 +17,74 @@ export default function SearchResults() {
   };
 
   return (
-    <Box sx={{ maxWidth: "1200px", mx: "auto", p: 3 }}>
-      <Box sx={{ mb: 3 }}>
-        <Button component={Link} to="/" startIcon={<ArrowBack />} sx={{ mb: 2 }}>
+    <Box sx={{ maxWidth: "1200px", mx: "auto", p: { xs: 2, sm: 3 } }}>
+      <Box sx={{ mb: { xs: 2, sm: 3 } }}>
+        <Button
+          component={Link}
+          to="/"
+          startIcon={<ArrowBack />}
+          sx={{
+            mb: { xs: 1, sm: 2 },
+            fontSize: { xs: "14px", sm: "16px" },
+          }}
+        >
           Back to search
         </Button>
-        <Typography variant="h4" component="h1" gutterBottom>
+        <Typography
+          variant="h4"
+          component="h1"
+          gutterBottom
+          sx={{
+            fontSize: { xs: "24px", sm: "28px", md: "32px" },
+          }}
+        >
           Flight Results
         </Typography>
-        <Typography variant="body1" color="text.secondary">
+        <Typography
+          variant="body1"
+          color="text.secondary"
+          sx={{
+            fontSize: { xs: "14px", sm: "16px" },
+            wordBreak: "break-word",
+          }}
+        >
           {searchDetails.origin} → {searchDetails.destination} | {searchDetails.adults} adult
           {parseInt(searchDetails.adults) > 1 ? "s" : ""} | {searchDetails.cabinClass}
         </Typography>
       </Box>
 
       {/* temporary paper component */}
-      <Paper sx={{ p: 4, textAlign: "center" }}>
-        <Typography variant="h5" gutterBottom>
+      <Paper sx={{ p: { xs: 2, sm: 4 }, textAlign: "center" }}>
+        <Typography
+          variant="h5"
+          gutterBottom
+          sx={{
+            fontSize: { xs: "20px", sm: "24px" },
+          }}
+        >
           🚧 Results page coming soon!
         </Typography>
 
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
+        <Typography
+          variant="body1"
+          color="text.secondary"
+          sx={{
+            mb: { xs: 2, sm: 3 },
+            fontSize: { xs: "14px", sm: "16px" },
+          }}
+        >
           For now, here's what you searched for:
         </Typography>
 
-        <Box sx={{ mb: 3, textAlign: "left", maxWidth: 400, mx: "auto" }}>
+        <Box
+          sx={{
+            mb: { xs: 2, sm: 3 },
+            textAlign: "left",
+            maxWidth: { xs: "100%", sm: 400 },
+            mx: "auto",
+            fontSize: { xs: "14px", sm: "16px" },
+          }}
+        >
           <Typography variant="body1">
             <strong>Trip type:</strong> {searchDetails.tripType}
           </Typography>
