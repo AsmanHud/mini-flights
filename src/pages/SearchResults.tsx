@@ -30,8 +30,51 @@ export default function SearchResults() {
           {parseInt(searchDetails.adults) > 1 ? "s" : ""} | {searchDetails.cabinClass}
         </Typography>
       </Box>
-      <Paper sx={{ p: 5 }}>
-        <Typography>The page is currently under construction!</Typography>
+
+      {/* temporary paper component */}
+      <Paper sx={{ p: 4, textAlign: "center" }}>
+        <Typography variant="h5" gutterBottom>
+          🚧 Results page coming soon!
+        </Typography>
+
+        <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
+          For now, here's what you searched for:
+        </Typography>
+
+        <Box sx={{ mb: 3, textAlign: "left", maxWidth: 400, mx: "auto" }}>
+          <Typography variant="body1">
+            <strong>Trip type:</strong> {searchDetails.tripType}
+          </Typography>
+          <Typography variant="body1">
+            <strong>From:</strong> {searchDetails.origin}
+          </Typography>
+          <Typography variant="body1">
+            <strong>To:</strong> {searchDetails.destination}
+          </Typography>
+          <Typography variant="body1">
+            <strong>Departure:</strong> {searchDetails.departureDate}
+          </Typography>
+          {searchDetails.returnDate && (
+            <Typography variant="body1">
+              <strong>Return:</strong> {searchDetails.returnDate}
+            </Typography>
+          )}
+          <Typography variant="body1">
+            <strong>Adults:</strong> {searchDetails.adults}
+          </Typography>
+          {searchDetails.children !== "0" && (
+            <Typography variant="body1">
+              <strong>Children:</strong> {searchDetails.children}
+            </Typography>
+          )}
+          <Typography variant="body1">
+            <strong>Class:</strong> {searchDetails.cabinClass}
+          </Typography>
+        </Box>
+
+        <Button component={Link} to="/" variant="contained">
+          Search again
+        </Button>
       </Paper>
     </Box>
   );
